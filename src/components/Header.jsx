@@ -32,7 +32,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2.5 shrink-0">
-          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-orange-400 to-rose-500 flex items-center justify-center shadow-lg shadow-orange-500/30">
+          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-yellow-400 to-rose-500 flex items-center justify-center shadow-lg shadow-orange-500/30">
             <Zap size={16} className="text-white" fill="white" />
           </div>
           <span className="text-white font-black text-lg tracking-tight">
