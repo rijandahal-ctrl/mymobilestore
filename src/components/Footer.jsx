@@ -73,7 +73,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/5 mx-6 mt-8 pt-6 pb-4 flex flex-col sm:flex-row justify-between items-center gap-2">
-        <p className="text-white/20 text-xs">© 2026 SusmiStore. All rights reserved.</p>
+        <p className="text-white/20 text-xs">© 2026 RijanStore. All rights reserved.</p>
         <div className="flex gap-4">
           {["Privacy", "Terms", "Cookies"].map(item => (
             <a key={item} href="#" className="text-white/20 hover:text-white/50 text-xs transition-colors">{item}</a>

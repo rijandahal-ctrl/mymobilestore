@@ -11,7 +11,7 @@ export default function CheckoutPage() {
   const [step, setStep] = useState(0);
   const [form, setForm] = useState({
     firstName: "", lastName: "", email: "", phone: "",
-    address: "", city: "", state: "", zip: "", country: "Australia",
+    address: "", city: "", state: "", zip: "", country: "NEPAL",
     cardName: "", cardNumber: "", expiry: "", cvv: "",
   });
 
@@ -43,7 +43,7 @@ export default function CheckoutPage() {
       </p>
       <div className="bg-gray-50 border border-gray-100 rounded-2xl p-6 text-left mb-10">
         <p className="text-gray-400 text-xs uppercase tracking-widest mb-3">Order Confirmation</p>
-        <p className="text-gray-900 font-black text-xl">Order #SUS-{Math.floor(Math.random() * 90000 + 10000)}</p>
+        <p className="text-gray-900 font-black text-xl">Order #MOB-{Math.floor(Math.random() * 90000 + 10000)}</p>
         <p className="text-gray-500 text-sm mt-2">Total paid: <span className="text-orange-500 font-black">${total.toFixed(2)}</span></p>
         <p className="text-gray-300 text-xs mt-2">Confirmation email sent to {form.email || "your email"}</p>
       </div>
@@ -96,7 +96,7 @@ export default function CheckoutPage() {
                       <input className={inputCls} placeholder={ph} value={form[key]} onChange={e => upd(key, e.target.value)} />
                     </div>
                   ))}
-                  {[["Email","email","email","john@email.com"],["Phone","phone","tel","+61 400 000 000"]].map(([label,key,type,ph]) => (
+                  {[["Email","email","email","nepal@gmail.com"],["Phone","phone","tel","+9779840000001"]].map(([label,key,type,ph]) => (
                     <div key={key}>
                       <label className="text-gray-500 text-xs mb-1.5 block">{label}</label>
                       <input className={inputCls} type={type} placeholder={ph} value={form[key]} onChange={e => upd(key, e.target.value)} />
@@ -106,7 +106,7 @@ export default function CheckoutPage() {
                     <label className="text-gray-500 text-xs mb-1.5 block">Street Address</label>
                     <input className={inputCls} placeholder="123 Main Street" value={form.address} onChange={e => upd("address", e.target.value)} />
                   </div>
-                  {[["City","city","Melbourne"],["State","state","VIC"],["Postcode","zip","3000"]].map(([label,key,ph]) => (
+                  {[["City","city","Itahari"],["State","state","KOSHI"],["Postcode","zip","56705"]].map(([label,key,ph]) => (
                     <div key={key}>
                       <label className="text-gray-500 text-xs mb-1.5 block">{label}</label>
                       <input className={inputCls} placeholder={ph} value={form[key]} onChange={e => upd(key, e.target.value)} />
@@ -115,7 +115,7 @@ export default function CheckoutPage() {
                   <div>
                     <label className="text-gray-500 text-xs mb-1.5 block">Country</label>
                     <select className={inputCls + " cursor-pointer"} value={form.country} onChange={e => upd("country", e.target.value)}>
-                      {["Australia","New Zealand","United States","United Kingdom","Canada","Singapore"].map(c => <option key={c}>{c}</option>)}
+                      {[" NEPAL","iNDIA","CHINA","United Kingdom","Canada","Singapore"].map(c => <option key={c}>{c}</option>)}
                     </select>
                   </div>
                 </div>
@@ -126,44 +126,89 @@ export default function CheckoutPage() {
             )}
 
             {/* STEP 1 — Payment */}
-            {step === 1 && (
-              <div className="bg-white border border-gray-100 rounded-3xl p-8 shadow-sm">
-                <h2 className="text-gray-900 font-black text-xl mb-6 flex items-center gap-2">
-                  <span className="w-8 h-8 bg-violet-50 rounded-xl flex items-center justify-center text-violet-500 text-sm">💳</span>
-                  Payment Details
-                </h2>
-                <div className="flex items-center gap-2 bg-emerald-50 border border-emerald-100 rounded-xl px-4 py-3 mb-6">
-                  <Lock size={14} className="text-emerald-500" />
-                  <span className="text-emerald-700 text-xs">256-bit SSL encryption. Your details are completely secure.</span>
-                </div>
-                <div className="space-y-4">
-                  <div>
-                    <label className="text-gray-500 text-xs mb-1.5 block">Name on Card</label>
-                    <input className={inputCls} placeholder="John Doe" value={form.cardName} onChange={e => upd("cardName", e.target.value)} />
-                  </div>
-                  <div>
-                    <label className="text-gray-500 text-xs mb-1.5 block">Card Number</label>
-                    <input className={inputCls} placeholder="1234 5678 9012 3456" maxLength={19} value={form.cardNumber} onChange={e => upd("cardNumber", e.target.value)} />
-                  </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <label className="text-gray-500 text-xs mb-1.5 block">Expiry</label>
-                      <input className={inputCls} placeholder="MM/YY" maxLength={5} value={form.expiry} onChange={e => upd("expiry", e.target.value)} />
-                    </div>
-                    <div>
-                      <label className="text-gray-500 text-xs mb-1.5 block">CVV</label>
-                      <input className={inputCls} placeholder="•••" maxLength={4} value={form.cvv} onChange={e => upd("cvv", e.target.value)} />
-                    </div>
-                  </div>
-                </div>
-                <div className="flex gap-3 mt-8">
-                  <button onClick={() => setStep(0)} className="flex-1 bg-gray-50 hover:bg-gray-100 border border-gray-200 text-gray-600 font-semibold py-3.5 rounded-2xl transition-all cursor-pointer">← Back</button>
-                  <button onClick={() => setStep(2)} className="flex-[2] bg-gradient-to-r from-orange-500 to-rose-500 text-white font-black py-4 rounded-2xl hover:opacity-90 transition-all active:scale-95 shadow-xl shadow-orange-200 cursor-pointer">
-                    Review Order →
-                  </button>
-                </div>
-              </div>
-            )}
+           {step === 1 && (
+  <div className="bg-white border border-gray-100 rounded-3xl p-8 shadow-sm">
+    <h2 className="text-gray-900 font-black text-xl mb-6 flex items-center gap-2">
+      <span className="w-8 h-8 bg-violet-50 rounded-xl flex items-center justify-center text-violet-500 text-sm">🌍</span>
+      Payment Method
+    </h2>
+
+    {/* Payment Method Selector */}
+    <div className="flex gap-2 mb-8 p-1 bg-gray-50 rounded-2xl">
+      <button 
+        onClick={() => upd("method", "card")}
+        className={`flex-1 py-2 text-sm font-bold rounded-xl transition-all ${form.method === 'card' ? 'bg-white shadow-sm text-violet-600' : 'text-gray-400'}`}
+      >
+        Card
+      </button>
+      <button 
+        onClick={() => upd("method", "international")}
+        className={`flex-1 py-2 text-sm font-bold rounded-xl transition-all ${form.method === 'international' ? 'bg-white shadow-sm text-violet-600' : 'text-gray-400'}`}
+      >
+        International / Nepal
+      </button>
+    </div>
+
+    <div className="flex items-center gap-2 bg-emerald-50 border border-emerald-100 rounded-xl px-4 py-3 mb-6">
+      <Lock size={14} className="text-emerald-500" />
+      <span className="text-emerald-700 text-xs">Secure encrypted transaction via Stripe & Himalayan Bank.</span>
+    </div>
+
+    <div className="space-y-4">
+      {form.method === 'card' ? (
+        /* Standard Card UI */
+        <>
+          <div>
+            <label className="text-gray-500 text-xs mb-1.5 block">Name on Card</label>
+            <input className={inputCls} placeholder="John Doe" value={form.cardName} onChange={e => upd("cardName", e.target.value)} />
+          </div>
+          <div>
+            <label className="text-gray-500 text-xs mb-1.5 block">Card Number</label>
+            <input className={inputCls} placeholder="1234 5678 9012 3456" maxLength={19} value={form.cardNumber} onChange={e => upd("cardNumber", e.target.value)} />
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className="text-gray-500 text-xs mb-1.5 block">Expiry</label>
+              <input className={inputCls} placeholder="MM/YY" maxLength={5} value={form.expiry} onChange={e => upd("expiry", e.target.value)} />
+            </div>
+            <div>
+              <label className="text-gray-500 text-xs mb-1.5 block">CVV</label>
+              <input className={inputCls} placeholder="•••" maxLength={4} value={form.cvv} onChange={e => upd("cvv", e.target.value)} />
+            </div>
+          </div>
+        </>
+      ) : (
+        /* International & Nepal Specific Wallets */
+        <div className="space-y-3">
+          <label className="text-gray-500 text-xs mb-1.5 block">Select Provider</label>
+          <div className="grid grid-cols-2 gap-3">
+            {['PayPal', 'eSewa', 'Khalti', 'Payoneer'].map((wallet) => (
+              <button
+                key={wallet}
+                onClick={() => upd("walletType", wallet)}
+                className={`p-4 border-2 rounded-2xl flex flex-col items-center gap-2 transition-all ${form.walletType === wallet ? 'border-violet-500 bg-violet-50' : 'border-gray-100 hover:border-gray-200'}`}
+              >
+                <span className="text-lg">{wallet === 'eSewa' ? '🟢' : wallet === 'Khalti' ? '🟣' : '🌐'}</span>
+                <span className="text-xs font-bold text-gray-700">{wallet}</span>
+              </button>
+            ))}
+          </div>
+          <div className="mt-4">
+            <label className="text-gray-500 text-xs mb-1.5 block">{form.walletType || 'Wallet'} ID / Email</label>
+            <input className={inputCls} placeholder="user@email.com or 98XXXXXXXX" value={form.walletId} onChange={e => upd("walletId", e.target.value)} />
+          </div>
+        </div>
+      )}
+    </div>
+
+    <div className="flex gap-3 mt-8">
+      <button onClick={() => setStep(0)} className="flex-1 bg-gray-50 hover:bg-gray-100 border border-gray-200 text-gray-600 font-semibold py-3.5 rounded-2xl transition-all cursor-pointer">← Back</button>
+      <button onClick={() => setStep(2)} className="flex-[2] bg-gradient-to-r from-orange-500 to-rose-500 text-white font-black py-4 rounded-2xl hover:opacity-90 transition-all active:scale-95 shadow-xl shadow-orange-200 cursor-pointer">
+        Review Order →
+      </button>
+    </div>
+  </div>
+)}
 
             {/* STEP 2 — Confirm */}
             {step === 2 && (
@@ -179,16 +224,16 @@ export default function CheckoutPage() {
                         <p className="text-gray-900 text-sm font-semibold line-clamp-1">{item.name}</p>
                         <p className="text-gray-400 text-xs">×{item.qty}</p>
                       </div>
-                      <span className="text-gray-900 font-bold text-sm">${(item.price * item.qty).toFixed(2)}</span>
+                      <span className="text-gray-900 font-bold text-sm">Rs{(item.price * item.qty).toFixed(2)}</span>
                     </div>
                   ))}
                 </div>
                 <div className="bg-gray-50 rounded-2xl p-4 space-y-2 text-sm mb-6">
                   <div className="flex justify-between text-gray-500"><span>Subtotal</span><span className="text-gray-900 font-semibold">${cartTotal.toFixed(2)}</span></div>
-                  <div className="flex justify-between text-gray-500"><span>Shipping</span><span className={shipping === 0 ? "text-emerald-600 font-semibold" : "text-gray-900 font-semibold"}>{shipping === 0 ? "FREE" : `$${shipping.toFixed(2)}`}</span></div>
+                  <div className="flex justify-between text-gray-500"><span>Shipping</span><span className={shipping === 0 ? "text-emerald-600 font-semibold" : "text-gray-900 font-semibold"}>{shipping === 0 ? "FREE" : `RS${shipping.toFixed(2)}`}</span></div>
                   <div className="flex justify-between text-gray-500"><span>Tax</span><span className="text-gray-900 font-semibold">${tax.toFixed(2)}</span></div>
                   <div className="flex justify-between text-gray-900 font-black text-lg pt-2 border-t border-gray-200">
-                    <span>Total</span><span className="text-orange-500">${total.toFixed(2)}</span>
+                    <span>Total</span><span className="text-orange-500">Rs{total.toFixed(2)}</span>
                   </div>
                 </div>
                 <div className="flex gap-3">

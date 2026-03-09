@@ -91,7 +91,7 @@ export default function Header() {
           {/* Cart */}
           <Link to="/cart" className="relative flex items-center gap-2 bg-gradient-to-br from-orange-500 to-rose-500 text-white text-sm font-bold px-4 py-2 rounded-xl hover:opacity-90 transition-all shadow-lg shadow-orange-500/20">
             <ShoppingCart size={15} />
-            <span className="hidden sm:inline">Cart</span>
+            <span className="hidden sm:inline">Cart item</span>
             {cartCount > 0 && (
               <span className="w-5 h-5 bg-white text-orange-600 text-[10px] font-black rounded-full flex items-center justify-center">
                 {cartCount}
