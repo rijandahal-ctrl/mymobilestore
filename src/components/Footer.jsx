@@ -18,7 +18,7 @@ export default function Footer() {
             <span className="text-white font-black text-lg">RIjan<span className="text-orange-400">Store</span></span>
           </Link>
           <p className="text-white/30 text-sm leading-relaxed max-w-xs">
-            Premium mobile accessories for those who demand the best. Quality, speed, and style.
+            Premium Mobile Accessories for those who demand the best. Quality, speed, and style.
           </p>
           <div className="flex gap-2 mt-5">
             {[Twitter, Instagram, Youtube].map((Icon, i) => (
