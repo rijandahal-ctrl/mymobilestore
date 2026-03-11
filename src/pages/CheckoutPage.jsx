@@ -224,16 +224,16 @@ export default function CheckoutPage() {
                         <p className="text-gray-900 text-sm font-semibold line-clamp-1">{item.name}</p>
                         <p className="text-gray-400 text-xs">×{item.qty}</p>
                       </div>
-                      <span className="text-gray-900 font-bold text-sm">Rs{(item.price * item.qty).toFixed(2)}</span>
+                      <span className="text-gray-900 font-bold text-sm">${(item.price * item.qty).toFixed(2)}</span>
                     </div>
                   ))}
                 </div>
                 <div className="bg-gray-50 rounded-2xl p-4 space-y-2 text-sm mb-6">
                   <div className="flex justify-between text-gray-500"><span>Subtotal</span><span className="text-gray-900 font-semibold">${cartTotal.toFixed(2)}</span></div>
-                  <div className="flex justify-between text-gray-500"><span>Shipping</span><span className={shipping === 0 ? "text-emerald-600 font-semibold" : "text-gray-900 font-semibold"}>{shipping === 0 ? "FREE" : `RS${shipping.toFixed(2)}`}</span></div>
+                  <div className="flex justify-between text-gray-500"><span>Shipping</span><span className={shipping === 0 ? "text-emerald-600 font-semibold" : "text-gray-900 font-semibold"}>{shipping === 0 ? "FREE" : `$${shipping.toFixed(2)}`}</span></div>
                   <div className="flex justify-between text-gray-500"><span>Tax</span><span className="text-gray-900 font-semibold">${tax.toFixed(2)}</span></div>
                   <div className="flex justify-between text-gray-900 font-black text-lg pt-2 border-t border-gray-200">
-                    <span>Total</span><span className="text-orange-500">Rs{total.toFixed(2)}</span>
+                    <span>Total</span><span className="text-orange-500">${total.toFixed(2)}</span>
                   </div>
                 </div>
                 <div className="flex gap-3">
